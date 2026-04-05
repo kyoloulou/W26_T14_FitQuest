@@ -42,24 +42,23 @@ FitQuest uses **local authentication** — accounts are stored securely on devic
 | Password | `password123` |
 
 ## Project Structure
-FitQuestT14/
-├── AuthStore.swift           # Login, register, sign out logic
-├── CalorieCalculator.swift   # Calorie calculation formulas
-├── CalorieCalculatorView.swift # Calorie calculator UI tab
-├── ContentView.swift         # Main TabView (Workouts, Calculator, Profile)
-├── FitQuestT14App.swift      # App entry point
-├── KeychainHelper.swift      # Secure Keychain wrapper
-├── LoginView.swift           # Login and registration screen
-├── ProfileView.swift         # Profile screen with stats
-├── RootView.swift            # Routes between Login and Main
-├── SessionRow.swift          # Workout history row
-├── StatBadge.swift           # Stat badge component
-├── TimerHolder.swift         # Workout timer logic
-├── ValidatedField.swift      # Reusable validated text field
-├── Workout.swift             # Data models
-├── WorkoutDetailView.swift   # Active workout screen
-├── WorkoutRow.swift          # Workout list row
-└── WorkoutStore.swift        # Session persistence
+- `AuthStore.swift` — Login, register, sign out logic
+- `CalorieCalculator.swift` — Calorie calculation formulas
+- `CalorieCalculatorView.swift` — Calorie calculator UI tab
+- `ContentView.swift` — Main TabView (Workouts, Calculator, Profile)
+- `FitQuestT14App.swift` — App entry point
+- `KeychainHelper.swift` — Secure Keychain wrapper
+- `LoginView.swift` — Login and registration screen
+- `ProfileView.swift` — Profile screen with stats
+- `RootView.swift` — Routes between Login and Main
+- `SessionRow.swift` — Workout history row
+- `StatBadge.swift` — Stat badge component
+- `TimerHolder.swift` — Workout timer logic
+- `ValidatedField.swift` — Reusable validated text field
+- `Workout.swift` — Data models
+- `WorkoutDetailView.swift` — Active workout screen
+- `WorkoutRow.swift` — Workout list row
+- `WorkoutStore.swift` — Session persistence
 
 ## Notes
 - All data is stored locally — no internet required
