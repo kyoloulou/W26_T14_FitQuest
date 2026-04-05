@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		5B2A0A222F74AB370052A1E9 /* FitQuestT14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FitQuestT14.app; path = "/Volumes/Macintosh_HD/Users/user291485/Documents/FitQuestT14/build/Debug-iphoneos/FitQuestT14.app"; sourceTree = "<absolute>"; };
+		CA88E8A22F826F4900700535 /* FitQuestT14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitQuestT14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2A0A242F74AB370052A1E9 /* FitQuestT14 */,
+				CA88E8A22F826F4900700535 /* FitQuestT14.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = FitQuestT14;
-			productReference = 5B2A0A222F74AB370052A1E9 /* FitQuestT14.app */;
+			productReference = CA88E8A22F826F4900700535 /* FitQuestT14.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
