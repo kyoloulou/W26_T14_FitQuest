@@ -1,4 +1,5 @@
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     @EnvironmentObject var store: WorkoutStore
@@ -15,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
 
-            // ── Tab 1: Workouts + Progress ──────────────────────────────
+            // ── Tab 1: Workouts + Progress ──────────────────────────
             NavigationStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 24) {
@@ -42,6 +43,43 @@ struct ContentView: View {
                             StatBadge(label: "Sessions", value: "\(store.sessions.count)", color: .blue)
                         }
 
+                        // ── Bar Chart ──────────────────────────────
+                        if !store.sessions.isEmpty {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Calories Per Session")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+
+                                Chart {
+                                    ForEach(sortedSessions.prefix(10).reversed()) { session in
+                                        BarMark(
+                                            x: .value("Date", session.date, unit: .day),
+                                            y: .value("Calories", session.calories)
+                                        )
+                                        .foregroundStyle(Color.blue.gradient)
+                                        .cornerRadius(4)
+                                    }
+                                }
+                                .frame(height: 180)
+                                .chartXAxis {
+                                    AxisMarks(values: .stride(by: .day)) { _ in
+                                        AxisGridLine()
+                                        AxisValueLabel(format: .dateTime.month(.abbreviated).day())
+                                    }
+                                }
+                                .chartYAxis {
+                                    AxisMarks { value in
+                                        AxisGridLine()
+                                        AxisValueLabel("\(value.as(Int.self) ?? 0) kcal")
+                                    }
+                                }
+                            }
+                            .padding()
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(12)
+                        }
+
+                        // ── Session History ────────────────────────
                         if store.sessions.isEmpty {
                             HStack {
                                 Spacer()
@@ -79,13 +117,18 @@ struct ContentView: View {
                     .padding()
                 }
                 .navigationTitle("FitQuest")
-                // Sign Out moved to Profile tab — removed from here
             }
             .tabItem {
                 Label("Workouts", systemImage: "figure.run")
             }
 
-            // ── Tab 2: Profile ──────────────────────────────────────────
+            // ── Tab 2: Calorie Calculator ───────────────────────────
+            CalorieCalculatorView()
+                .tabItem {
+                    Label("Calculator", systemImage: "flame.fill")
+                }
+
+            // ── Tab 3: Profile ──────────────────────────────────────
             ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
