@@ -1,5 +1,5 @@
 # FitQuest 🏃‍♂️
-**Health & Fitness Mobile App — COMP3097 | Team T14 | Trung Anh Nguyen**
+**Health & Fitness Mobile App — COMP3078 | Team T14 | Trung Anh Nguyen**
 
 ## Overview
 FitQuest is an iOS fitness tracking app built with Swift and SwiftUI. It allows users to register an account, browse and start pre-built workouts, track calorie burn with a live timer, view workout history with a progress chart, calculate calories burned, and manage their profile — all stored locally with no backend required.
@@ -73,4 +73,4 @@ FitQuest uses **local authentication** — accounts are stored securely on devic
 - **Foundation / UserDefaults** — local session persistence
 
 ---
-*COMP3097 — George Brown College — Winter 2026*
+*COMP3078 — George Brown College — Winter 2026*
